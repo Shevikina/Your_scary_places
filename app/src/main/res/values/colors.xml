@@ -6,4 +6,5 @@
     <color name="OnSecondaryColor">#FFFFFF</color>
     <color name="SurfaceColor">#804E4E</color>
     <color name="OnSurfaceColor">#E1E1E1</color>
+    <color name="back_logo">#1C1F1E</color>
 </resources>
