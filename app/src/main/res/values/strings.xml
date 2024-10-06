@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name" translatable="false">Your scary places</string>
+    <string name="header_title">Startup “BloodMoon”</string>
+    <string name="description">Description</string>
+    <string name="send_application">Send an application</string>
+</resources>

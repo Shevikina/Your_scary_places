@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="header_title">Стартап “BloodMoon”</string>
+    <string name="description">Описание</string>
+    <string name="send_application">Отправить заявку</string>
+</resources>
