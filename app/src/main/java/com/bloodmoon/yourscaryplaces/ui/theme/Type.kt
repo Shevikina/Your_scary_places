@@ -8,7 +8,7 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
 
-val fonts = FontFamily(
+val robotoFonts = FontFamily(
     Font(resId = R.font.roboto_regular, weight = FontWeight.Normal),
     Font(resId = R.font.roboto_medium, weight = FontWeight.Medium),
     Font(resId = R.font.roboto_bold, weight = FontWeight.Bold),
@@ -18,7 +18,7 @@ val fonts = FontFamily(
 // Set of Material typography styles to start with
 val typography = Typography(
     bodyLarge = TextStyle(
-        fontFamily = fonts,
+        fontFamily = robotoFonts,
         fontWeight = FontWeight.Normal,
         fontSize = 16.sp,
         lineHeight = 24.sp,

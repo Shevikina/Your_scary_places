@@ -16,7 +16,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.bloodmoon.yourscaryplaces.ui.theme.fonts
+import com.bloodmoon.yourscaryplaces.ui.theme.robotoFonts
 import com.bloodmoon.yourscaryplaces.ui.theme.shapes
 
 @Composable
@@ -37,14 +37,14 @@ fun JetTextCard(label: String, value: String, modifier: Modifier){
         verticalArrangement = Arrangement.spacedBy(2.dp)
     ){
         Text(
-            fontFamily = fonts,
+            fontFamily = robotoFonts,
             fontSize = 22.sp,
             fontWeight = FontWeight.Bold,
             color = MaterialTheme.colorScheme.onSecondary.copy(0.2f),
             text = label
         )
         Text(
-            fontFamily = fonts,
+            fontFamily = robotoFonts,
             fontSize = 17.sp,
             fontWeight = FontWeight.Bold,
             color = MaterialTheme.colorScheme.onSecondary.copy(0.7f),
