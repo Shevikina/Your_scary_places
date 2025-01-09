@@ -22,7 +22,8 @@ private val DarkColorScheme = darkColorScheme(
     tertiary = Pink80,
     onPrimary = OnPrimaryColor,
     onSecondary = OnSecondaryColor,
-    onSurface = OnSurfaceColor
+    onSurface = OnSurfaceColor,
+    background = BackgroundColor
 )
 
 private val LightColorScheme = lightColorScheme(
@@ -32,7 +33,8 @@ private val LightColorScheme = lightColorScheme(
     tertiary = Pink40,
     onPrimary = OnPrimaryColor,
     onSecondary = OnSecondaryColor,
-    onSurface = OnSurfaceColor
+    onSurface = OnSurfaceColor,
+    background = BackgroundColor
 )
 
 // CompositionLocal позволяет объявлять состояние на самом высоком уровне,
