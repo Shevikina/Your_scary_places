@@ -17,11 +17,9 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import com.bloodmoon.yourscaryplaces.R
 import com.bloodmoon.yourscaryplaces.ui.theme.JetYourScaryPlacesTheme
 import com.bloodmoon.yourscaryplaces.ui.theme.YourScaryPlacesTheme
-import com.bloodmoon.yourscaryplaces.ui.theme.robotoFonts
 
 @Composable
 fun PlanetCard(label: String, rating: Int, imageId: Int, modifier: Modifier = Modifier) {
@@ -49,10 +47,9 @@ fun PlanetCard(label: String, rating: Int, imageId: Int, modifier: Modifier = Mo
         ) {
             Text(
                 text = label,
-                fontFamily = robotoFonts,
-                fontSize = 16.sp,
+                style = JetYourScaryPlacesTheme.typography.bodyLarge
+                    .copy(fontWeight = FontWeight.Medium),
                 color = JetYourScaryPlacesTheme.colorScheme.onSurface,
-                fontWeight = FontWeight.Medium
             )
             Spacer(modifier = Modifier.weight(1f))
             JetRatingBar(

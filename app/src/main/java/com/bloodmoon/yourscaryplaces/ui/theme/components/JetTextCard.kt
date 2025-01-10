@@ -7,7 +7,6 @@ import androidx.compose.foundation.layout.Arrangement
 import com.bloodmoon.yourscaryplaces.R
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -16,8 +15,8 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.bloodmoon.yourscaryplaces.ui.theme.robotoFonts
-import com.bloodmoon.yourscaryplaces.ui.theme.shapes
+import com.bloodmoon.yourscaryplaces.ui.theme.JetYourScaryPlacesTheme
+import com.bloodmoon.yourscaryplaces.ui.theme.YourScaryPlacesTheme
 
 @Composable
 fun JetTextCard(label: String, value: String, modifier: Modifier){
@@ -25,30 +24,32 @@ fun JetTextCard(label: String, value: String, modifier: Modifier){
         modifier = modifier
             .background(
                 color = Color.DarkGray,
-                shape = shapes.medium
+                shape = JetYourScaryPlacesTheme.shapes.medium
             )
             .padding(
                 start = 24.dp,
                 end = 24.dp,
                 bottom = 24.dp,
                 top = 14.dp
-                ),
+            ),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.spacedBy(2.dp)
     ){
         Text(
-            fontFamily = robotoFonts,
-            fontSize = 22.sp,
-            fontWeight = FontWeight.Bold,
-            color = MaterialTheme.colorScheme.onSecondary.copy(0.2f),
-            text = label
+            text = label,
+            style = JetYourScaryPlacesTheme.typography.bodyMedium.copy(
+                fontSize = 22.sp,
+                fontWeight = FontWeight.Bold
+            ),
+            color = JetYourScaryPlacesTheme.colorScheme.onSecondary.copy(0.2f)
         )
         Text(
-            fontFamily = robotoFonts,
-            fontSize = 17.sp,
-            fontWeight = FontWeight.Bold,
-            color = MaterialTheme.colorScheme.onSecondary.copy(0.7f),
             text = value,
+            style = JetYourScaryPlacesTheme.typography.bodyMedium.copy(
+                fontSize = 17.sp,
+                fontWeight = FontWeight.Bold
+            ),
+            color = JetYourScaryPlacesTheme.colorScheme.onSecondary.copy(0.7f),
             modifier = modifier.padding(6.dp)
         )
     }
@@ -57,10 +58,12 @@ fun JetTextCard(label: String, value: String, modifier: Modifier){
 @Preview(showSystemUi = false)
 @Composable
 fun JetTextCardPreview(){
+    YourScaryPlacesTheme{
         JetTextCard(
             label = stringResource(R.string.description),
             value = "We are happy to show you lost places in our endless galaxy. Fear and horror will follow you all the way. Only the most desperate travelers will be able to reach the end. You are ready?",
             modifier = Modifier
         )
+    }
 }
 

@@ -54,7 +54,7 @@ val LocalJetYourScaryPlacesShape = staticCompositionLocalOf<JetYouScaryPlacesSha
 }
 
 
-object JetYourScaryPlacesTheme{ //как бы вместо MaterialTheme, но где я должна использовать - хз
+object JetYourScaryPlacesTheme{ //вместо MaterialTheme
     val colorScheme: ColorScheme
         @Composable
         get() = LocalJetYourScaryPlacesColors.current
