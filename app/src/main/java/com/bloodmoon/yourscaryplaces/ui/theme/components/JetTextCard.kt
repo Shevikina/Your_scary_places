@@ -10,7 +10,6 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Text
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
@@ -23,7 +22,7 @@ fun JetTextCard(label: String, value: String, modifier: Modifier){
     Column(
         modifier = modifier
             .background(
-                color = Color.DarkGray,
+                color = JetYourScaryPlacesTheme.colorScheme.surface,
                 shape = JetYourScaryPlacesTheme.shapes.medium
             )
             .padding(
@@ -41,7 +40,7 @@ fun JetTextCard(label: String, value: String, modifier: Modifier){
                 fontSize = 22.sp,
                 fontWeight = FontWeight.Bold
             ),
-            color = JetYourScaryPlacesTheme.colorScheme.onSecondary.copy(0.2f)
+            color = JetYourScaryPlacesTheme.colorScheme.onSurface
         )
         Text(
             text = value,
@@ -49,7 +48,7 @@ fun JetTextCard(label: String, value: String, modifier: Modifier){
                 fontSize = 17.sp,
                 fontWeight = FontWeight.Bold
             ),
-            color = JetYourScaryPlacesTheme.colorScheme.onSecondary.copy(0.7f),
+            color = JetYourScaryPlacesTheme.colorScheme.onSurface,
             modifier = modifier.padding(6.dp)
         )
     }
