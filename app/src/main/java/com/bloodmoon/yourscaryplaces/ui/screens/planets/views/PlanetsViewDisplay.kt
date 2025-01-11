@@ -1,11 +1,15 @@
 package com.bloodmoon.yourscaryplaces.ui.screens.planets.views
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -22,12 +26,14 @@ import com.bloodmoon.yourscaryplaces.R
 
 @Composable
 fun PlanetsViewDisplay() {
+    Box(modifier = Modifier.fillMaxSize().background(JetYourScaryPlacesTheme.colorScheme.primary))
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.spacedBy(24.dp),
         modifier = Modifier
-            .fillMaxWidth()
             .background(JetYourScaryPlacesTheme.colorScheme.primary)
             .padding(24.dp)
+            .verticalScroll(rememberScrollState())
     ) {
         Text(
             text = "Startup \n“BloodMoon”",
@@ -38,21 +44,17 @@ fun PlanetsViewDisplay() {
             ),
             color = JetYourScaryPlacesTheme.colorScheme.onPrimary
         )
-        Spacer(modifier = Modifier.height(39.dp))
+        Spacer(modifier = Modifier.height(15.dp))
         PlanetCard(
             label = "Ghost “Yenion”",
             rating = 3,
             imageId = R.drawable.app2_image1
         )
-        Spacer(modifier = Modifier.height(24.dp))
-
         PlanetCard(
             label = "Destroyed platform",
             rating = 4,
             imageId = R.drawable.app2_image2
         )
-        Spacer(modifier = Modifier.height(24.dp))
-
         PlanetCard(
             label = "Gold mine",
             rating = 5,
