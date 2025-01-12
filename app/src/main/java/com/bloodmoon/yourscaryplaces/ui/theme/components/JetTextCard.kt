@@ -6,6 +6,9 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import com.bloodmoon.yourscaryplaces.R
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Text
 import androidx.compose.ui.Alignment
@@ -18,50 +21,45 @@ import com.bloodmoon.yourscaryplaces.ui.theme.JetYourScaryPlacesTheme
 import com.bloodmoon.yourscaryplaces.ui.theme.YourScaryPlacesTheme
 
 @Composable
-fun JetTextCard(label: String, value: String, modifier: Modifier){
+fun JetTextCard(label: String, value: String, modifier: Modifier = Modifier) {
     Column(
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.spacedBy(8.dp),
         modifier = modifier
+            .fillMaxWidth()
             .background(
                 color = JetYourScaryPlacesTheme.colorScheme.surface,
                 shape = JetYourScaryPlacesTheme.shapes.medium
             )
-            .padding(
-                start = 24.dp,
-                end = 24.dp,
-                bottom = 24.dp,
-                top = 14.dp
-            ),
-        horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.spacedBy(2.dp)
-    ){
+            .padding(24.dp, 12.dp, 24.dp, 24.dp)
+    ) {
         Text(
             text = label,
             style = JetYourScaryPlacesTheme.typography.bodyMedium.copy(
-                fontSize = 22.sp,
-                fontWeight = FontWeight.Bold
+                fontSize = 18.sp,
+                fontWeight = FontWeight.Bold,
+                lineHeight = 21.sp
             ),
             color = JetYourScaryPlacesTheme.colorScheme.onSurface
         )
         Text(
             text = value,
             style = JetYourScaryPlacesTheme.typography.bodyMedium.copy(
-                fontSize = 17.sp,
-                fontWeight = FontWeight.Bold
+                fontWeight = FontWeight.Bold,
+                lineHeight = 19.sp
             ),
-            color = JetYourScaryPlacesTheme.colorScheme.onSurface,
-            modifier = modifier.padding(6.dp)
+            color = JetYourScaryPlacesTheme.colorScheme.onSurface
         )
     }
 }
 
 @Preview(showSystemUi = false)
 @Composable
-fun JetTextCardPreview(){
-    YourScaryPlacesTheme{
+fun JetTextCardPreview() {
+    YourScaryPlacesTheme {
         JetTextCard(
             label = stringResource(R.string.description),
-            value = "We are happy to show you lost places in our endless galaxy. Fear and horror will follow you all the way. Only the most desperate travelers will be able to reach the end. You are ready?",
-            modifier = Modifier
+            value = "We are happy to show you lost places in our endless galaxy. Fear and horror will follow you all the way. Only the most desperate travelers will be able to reach the end. You are ready?"
         )
     }
 }

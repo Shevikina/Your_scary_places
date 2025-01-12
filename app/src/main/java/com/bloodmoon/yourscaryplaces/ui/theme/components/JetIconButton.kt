@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.shape.CornerBasedShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Icon
 import androidx.compose.runtime.Composable
@@ -23,9 +24,10 @@ import com.bloodmoon.yourscaryplaces.ui.theme.YourScaryPlacesTheme
 @Composable
 fun JetIconButton(
     vectorDrawableId: Int,
-    shape: RoundedCornerShape,
+    shape: CornerBasedShape,
     contentPadding: PaddingValues = PaddingValues(0.dp),
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    onClick: () -> Unit
 ) {
     Box(
         contentAlignment = Alignment.Center,
@@ -34,7 +36,7 @@ fun JetIconButton(
             .background(JetYourScaryPlacesTheme.colorScheme.surface)
             .size(48.dp)
             .padding(contentPadding)
-            .clickable{ println("Boop!") }
+            .clickable { onClick }
     ) {
         Icon(
             imageVector = ImageVector.vectorResource(id = vectorDrawableId),
@@ -51,10 +53,11 @@ fun JetIconButtonPreview() {
     YourScaryPlacesTheme {
         JetIconButton(
             vectorDrawableId = com.microsoft.fluent.mobile.icons.R.drawable.ic_fluent_chevron_left_16_filled,
-//            shape = JetYourScaryPlacesTheme.shapes.small, //разобраться поч не могу так сделать
             shape = RoundedCornerShape(8.dp),
             contentPadding = PaddingValues(12.dp),
             modifier = Modifier
-        )
+        ){
+            println("Boop!")
+        }
     }
 }
