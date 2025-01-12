@@ -61,7 +61,7 @@ fun PlanetPageViewDisplay() {
             value = "We are happy to show you lost places in our endless galaxy. Fear and horror will follow you all the way. Only the most desperate travelers will be able to reach the end. You are ready?"
         )
         Spacer(modifier = Modifier.weight(1f))
-        JetGradientButton("Send an application") { println("Be send") }
+        JetGradientButton(stringResource(id = R.string.send_application)) { println("Be send") }
     }
 }
 

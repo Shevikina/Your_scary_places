@@ -14,6 +14,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
@@ -26,7 +27,9 @@ import com.bloodmoon.yourscaryplaces.R
 
 @Composable
 fun PlanetsViewDisplay() {
-    Box(modifier = Modifier.fillMaxSize().background(JetYourScaryPlacesTheme.colorScheme.primary))
+    Box(modifier = Modifier
+        .fillMaxSize()
+        .background(JetYourScaryPlacesTheme.colorScheme.primary))
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.spacedBy(24.dp),
@@ -36,7 +39,7 @@ fun PlanetsViewDisplay() {
             .verticalScroll(rememberScrollState())
     ) {
         Text(
-            text = "Startup \n“BloodMoon”",
+            text = stringResource(id = R.string.header_title).replace(" ", "\n"),
             style = JetYourScaryPlacesTheme.typography.bodyLarge.copy(
                 fontSize = 24.sp,
                 fontWeight = FontWeight.Bold,
