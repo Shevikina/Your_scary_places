@@ -54,14 +54,14 @@ fun PlanetPageViewDisplay() {
         PlanetCard(
             label = cardLabel,
             rating = 3,
-            imageId = R.drawable.app2_image1
+            imagePath = "file:///android_asset/App2_Image1.jpg"
         )
         JetTextCard(
             label = stringResource(R.string.description),
             value = "We are happy to show you lost places in our endless galaxy. Fear and horror will follow you all the way. Only the most desperate travelers will be able to reach the end. You are ready?"
         )
         Spacer(modifier = Modifier.weight(1f))
-        JetGradientButton(stringResource(id = R.string.send_application)) { println("Be send") }
+        JetGradientButton(stringResource(id = R.string.send_application)) {}
     }
 }
 

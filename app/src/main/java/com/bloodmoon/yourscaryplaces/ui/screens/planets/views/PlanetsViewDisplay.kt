@@ -20,16 +20,18 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.bloodmoon.yourscaryplaces.R
 import com.bloodmoon.yourscaryplaces.ui.theme.JetYourScaryPlacesTheme
 import com.bloodmoon.yourscaryplaces.ui.theme.YourScaryPlacesTheme
 import com.bloodmoon.yourscaryplaces.ui.theme.components.PlanetCard
-import com.bloodmoon.yourscaryplaces.R
 
 @Composable
 fun PlanetsViewDisplay() {
-    Box(modifier = Modifier
-        .fillMaxSize()
-        .background(JetYourScaryPlacesTheme.colorScheme.primary))
+    Box(
+        modifier = Modifier
+            .fillMaxSize()
+            .background(JetYourScaryPlacesTheme.colorScheme.primary)
+    )
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.spacedBy(24.dp),
@@ -51,17 +53,17 @@ fun PlanetsViewDisplay() {
         PlanetCard(
             label = "Ghost “Yenion”",
             rating = 3,
-            imageId = R.drawable.app2_image1
-        )
+            imagePath = "file:///android_asset/App2_Image1.jpg"
+        ) {}
         PlanetCard(
             label = "Destroyed platform",
             rating = 4,
-            imageId = R.drawable.app2_image2
+            imagePath = "file:///android_asset/App2_Image2.jpg"
         )
         PlanetCard(
             label = "Gold mine",
             rating = 5,
-            imageId = R.drawable.app2_image3
+            imagePath = "file:///android_asset/App2_Image3.jpg"
         )
     }
 }
