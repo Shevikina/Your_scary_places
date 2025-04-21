@@ -1,4 +1,4 @@
-package com.bloodmoon.yourscaryplaces.models.view_states
+package com.bloodmoon.yourscaryplaces.ui.screens.planets.models
 
 sealed class ScaryPlacePageViewState {
     data object Loading : ScaryPlacePageViewState()

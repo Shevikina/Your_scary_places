@@ -1,4 +1,4 @@
-package com.bloodmoon.yourscaryplaces.models.events
+package com.bloodmoon.yourscaryplaces.ui.screens.planets.models
 
 sealed class ScaryPlacePageEvent {
     data class EnterScreen(val planetId: Int) : ScaryPlacePageEvent()
