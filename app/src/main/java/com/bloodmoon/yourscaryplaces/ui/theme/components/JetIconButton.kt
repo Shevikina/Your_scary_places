@@ -4,9 +4,8 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.PaddingValues
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.sizeIn
 import androidx.compose.foundation.shape.CornerBasedShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Icon
@@ -32,17 +31,16 @@ fun JetIconButton(
     Box(
         contentAlignment = Alignment.Center,
         modifier = modifier
+            .background(JetYourScaryPlacesTheme.colorScheme.surface, shape)
+            .sizeIn(48.dp, 48.dp)
             .clip(shape)
-            .background(JetYourScaryPlacesTheme.colorScheme.surface)
-            .size(48.dp)
+            .clickable(onClick = onClick)
             .padding(contentPadding)
-            .clickable { onClick }
     ) {
         Icon(
             imageVector = ImageVector.vectorResource(id = vectorDrawableId),
             tint = JetYourScaryPlacesTheme.colorScheme.onSecondary,
-            contentDescription = "icon",
-            modifier = Modifier.fillMaxSize()
+            contentDescription = "icon"
         )
     }
 }
@@ -56,7 +54,7 @@ fun JetIconButtonPreview() {
             shape = RoundedCornerShape(8.dp),
             contentPadding = PaddingValues(12.dp),
             modifier = Modifier
-        ){
+        ) {
             println("Boop!")
         }
     }
