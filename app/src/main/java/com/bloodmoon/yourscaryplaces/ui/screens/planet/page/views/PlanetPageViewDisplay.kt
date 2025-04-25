@@ -83,6 +83,7 @@ fun PlanetPageViewDisplayPreview() {
     PlanetsTheme {
         PlanetPageViewDisplay(
             PlanetInfo(
+                id = 0,
                 label = "Ghost “Yenion”",
                 rating = 3,
                 imagePath = "file:///android_asset/App2_Image1.jpg"

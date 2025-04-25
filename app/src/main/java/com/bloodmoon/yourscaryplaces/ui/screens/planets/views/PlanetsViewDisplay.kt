@@ -52,8 +52,8 @@ fun PlanetsViewDisplay(dispatcher: (PlanetsEvent) -> Unit) {
             color = JetPlanetsTheme.colorScheme.onPrimary
         )
         Spacer(modifier = Modifier.height(15.dp))
-        Database.planetList.forEachIndexed { idx, info ->
-            PlanetCard(info) { dispatcher.invoke(PlanetsEvent.OpenPlanetPageScreen(idx)) }
+        Database.planetList.forEach { info ->
+            PlanetCard(info) { dispatcher.invoke(PlanetsEvent.OpenPlanetPageScreen(info.id)) }
         }
     }
 }

@@ -31,7 +31,7 @@ fun PlanetPageScreen(navController: NavController, planetId: Int) {
         else -> {}
     }
 
-    PlanetPageViewDisplay(planetInfo = Database.planetList[planetId]) { event ->
+    PlanetPageViewDisplay(planetInfo = Database.planetList.first { it.id == planetId }) { event ->
         when (event) {
             is PlanetPageEvent.CloseScreen -> {
                 navController.popBackStack()
