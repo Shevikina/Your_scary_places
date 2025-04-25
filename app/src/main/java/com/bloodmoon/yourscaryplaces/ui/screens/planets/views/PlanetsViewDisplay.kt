@@ -21,12 +21,14 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.bloodmoon.yourscaryplaces.R
+import com.bloodmoon.yourscaryplaces.data.local.Database
+import com.bloodmoon.yourscaryplaces.ui.screens.planets.models.PlanetsEvent
 import com.bloodmoon.yourscaryplaces.ui.theme.JetYourScaryPlacesTheme
 import com.bloodmoon.yourscaryplaces.ui.theme.YourScaryPlacesTheme
 import com.bloodmoon.yourscaryplaces.ui.theme.components.PlanetCard
 
 @Composable
-fun PlanetsViewDisplay() {
+fun PlanetsViewDisplay(dispatcher: (PlanetsEvent) -> Unit) {
     Box(
         modifier = Modifier
             .fillMaxSize()
@@ -50,21 +52,9 @@ fun PlanetsViewDisplay() {
             color = JetYourScaryPlacesTheme.colorScheme.onPrimary
         )
         Spacer(modifier = Modifier.height(15.dp))
-        PlanetCard(
-            label = "Ghost “Yenion”",
-            rating = 3,
-            imagePath = "file:///android_asset/App2_Image1.jpg"
-        ) {}
-        PlanetCard(
-            label = "Destroyed platform",
-            rating = 4,
-            imagePath = "file:///android_asset/App2_Image2.jpg"
-        )
-        PlanetCard(
-            label = "Gold mine",
-            rating = 5,
-            imagePath = "file:///android_asset/App2_Image3.jpg"
-        )
+        Database.planetList.forEachIndexed { idx, info ->
+            PlanetCard(info) { dispatcher.invoke(PlanetsEvent.OpenPlanetPageScreen(idx)) }
+        }
     }
 }
 
@@ -72,5 +62,5 @@ fun PlanetsViewDisplay() {
 @Preview
 @Composable
 fun PlanetsViewDisplayPreview() {
-    YourScaryPlacesTheme { PlanetsViewDisplay() }
+    YourScaryPlacesTheme { PlanetsViewDisplay {} }
 }
