@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.ui.Modifier
 import com.bloodmoon.yourscaryplaces.ui.navigation.NavHostScreen
+import com.bloodmoon.yourscaryplaces.ui.theme.JetPlanetsTheme
 import com.bloodmoon.yourscaryplaces.ui.theme.PlanetsTheme
 
 class MainActivity : ComponentActivity() {
@@ -17,7 +18,10 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             PlanetsTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
+                Scaffold(
+                    containerColor = JetPlanetsTheme.colorScheme.background,
+                    modifier = Modifier.fillMaxSize()
+                ) { innerPadding ->
                     NavHostScreen(Modifier.padding(innerPadding))
                 }
             }
