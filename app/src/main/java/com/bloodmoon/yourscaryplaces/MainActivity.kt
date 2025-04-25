@@ -30,11 +30,6 @@ class MainActivity : ComponentActivity() {
     }
 }
 
-sealed class NavScreen{
-    data object TouristPlanets : NavScreen()
-    data class TouristPlanetPage(val planetId:Int) : NavScreen()
-}
-
 @Composable
 fun Greeting(name: String, modifier: Modifier = Modifier) {
     Text(
