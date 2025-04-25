@@ -20,18 +20,17 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import coil3.compose.AsyncImage
+import com.bloodmoon.yourscaryplaces.ui.screens.planets.models.PlanetInfo
 import com.bloodmoon.yourscaryplaces.ui.theme.JetYourScaryPlacesTheme
 import com.bloodmoon.yourscaryplaces.ui.theme.YourScaryPlacesTheme
 
 @Composable
 fun PlanetCard(
-    label: String,
-    rating: Int,
-    imagePath: String,
+    info: PlanetInfo,
     modifier: Modifier = Modifier,
     onClick: (() -> Unit)? = null
 ) {
-    if (rating > 5 || rating < 0 || label.isEmpty()) return
+    if (info.rating > 5 || info.rating < 0 || info.label.isEmpty()) return
 
     Column(
         verticalArrangement = Arrangement.SpaceBetween,
@@ -39,7 +38,7 @@ fun PlanetCard(
         modifier = modifier
     ) {
         AsyncImage(
-            model = imagePath,
+            model = info.imagePath,
             contentDescription = null,
             contentScale = ContentScale.Crop,
             modifier = Modifier
@@ -58,14 +57,14 @@ fun PlanetCard(
             modifier = Modifier.padding(16.dp, 10.dp)
         ) {
             Text(
-                text = label,
+                text = info.label,
                 style = JetYourScaryPlacesTheme.typography.bodyLarge
                     .copy(fontWeight = FontWeight.Medium),
                 color = JetYourScaryPlacesTheme.colorScheme.onSurface,
             )
             Spacer(modifier = Modifier.weight(1f))
             JetRatingBar(
-                rating = rating,
+                rating = info.rating,
                 modifier = Modifier.height(16.dp)
             )
         }
@@ -77,9 +76,11 @@ fun PlanetCard(
 fun PlanetCardPreview() {
     YourScaryPlacesTheme {
         PlanetCard(
-            label = "Ghost “Yenion”",
-            rating = 3,
-            imagePath = "file:///android_asset/App2_Image1.jpg"
+            PlanetInfo(
+                label = "Ghost “Yenion”",
+                rating = 3,
+                imagePath = "file:///android_asset/App2_Image1.jpg"
+            )
         )
     }
 }

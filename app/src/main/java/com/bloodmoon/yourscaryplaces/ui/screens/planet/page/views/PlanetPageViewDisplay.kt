@@ -1,4 +1,4 @@
-package com.bloodmoon.yourscaryplaces.ui.screens.planets.views
+package com.bloodmoon.yourscaryplaces.ui.screens.planet.page.views
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -19,6 +19,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.bloodmoon.yourscaryplaces.R
+import com.bloodmoon.yourscaryplaces.ui.screens.planets.models.PlanetInfo
 import com.bloodmoon.yourscaryplaces.ui.theme.JetYourScaryPlacesTheme
 import com.bloodmoon.yourscaryplaces.ui.theme.YourScaryPlacesTheme
 import com.bloodmoon.yourscaryplaces.ui.theme.components.JetGradientButton
@@ -27,7 +28,7 @@ import com.bloodmoon.yourscaryplaces.ui.theme.components.JetTextCard
 import com.bloodmoon.yourscaryplaces.ui.theme.components.PlanetCard
 
 @Composable
-fun PlanetPageViewDisplay() {
+fun PlanetPageViewDisplay(planetInfo: PlanetInfo) {
     Column(
         verticalArrangement = Arrangement.spacedBy(24.dp),
         modifier = Modifier
@@ -42,20 +43,16 @@ fun PlanetPageViewDisplay() {
             contentPadding = PaddingValues(12.dp)
         ) { println("Back") }
         Spacer(modifier = Modifier.height(14.dp))
-        val cardLabel = "Ghost “Yenion”"
+
         Text(
-            text = cardLabel,
+            text = planetInfo.label,
             color = JetYourScaryPlacesTheme.colorScheme.onPrimary,
             style = JetYourScaryPlacesTheme.typography.bodyLarge.copy(
                 fontSize = 24.sp,
                 fontWeight = FontWeight.Bold
             )
         )
-        PlanetCard(
-            label = cardLabel,
-            rating = 3,
-            imagePath = "file:///android_asset/App2_Image1.jpg"
-        )
+        PlanetCard(planetInfo)
         JetTextCard(
             label = stringResource(R.string.description),
             value = "We are happy to show you lost places in our endless galaxy. Fear and horror will follow you all the way. Only the most desperate travelers will be able to reach the end. You are ready?"
@@ -68,5 +65,13 @@ fun PlanetPageViewDisplay() {
 @Preview
 @Composable
 fun PlanetPageViewDisplayPreview() {
-    YourScaryPlacesTheme { PlanetPageViewDisplay() }
+    YourScaryPlacesTheme {
+        PlanetPageViewDisplay(
+            PlanetInfo(
+                label = "Ghost “Yenion”",
+                rating = 3,
+                imagePath = "file:///android_asset/App2_Image1.jpg"
+            )
+        )
+    }
 }
