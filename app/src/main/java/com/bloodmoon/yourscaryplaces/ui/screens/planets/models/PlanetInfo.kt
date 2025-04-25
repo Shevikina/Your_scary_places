@@ -4,4 +4,5 @@ data class PlanetInfo(
     val label: String,
     val rating: Int,
     val imagePath: String,
+    val description: String = ""
 )

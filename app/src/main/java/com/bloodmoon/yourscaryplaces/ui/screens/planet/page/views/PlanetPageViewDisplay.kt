@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
@@ -56,10 +57,23 @@ fun PlanetPageViewDisplay(planetInfo: PlanetInfo, dispatcher: (PlanetPageEvent) 
         PlanetCard(planetInfo)
         JetTextCard(
             label = stringResource(R.string.description),
-            value = "We are happy to show you lost places in our endless galaxy. Fear and horror will follow you all the way. Only the most desperate travelers will be able to reach the end. You are ready?"
+            value = planetInfo.description
         )
         Spacer(modifier = Modifier.weight(1f))
-        JetGradientButton(stringResource(id = R.string.send_application)) {}
+        JetGradientButton(
+            text = stringResource(id = R.string.send_application),
+            modifier = Modifier.fillMaxWidth(),
+            onClick = {
+                dispatcher.invoke(
+                    PlanetPageEvent.ShowDialog(
+                        title = "Tour details",
+                        body = "Name: ${planetInfo.label}\nDate: Tommorow",
+                        positiveButtonText = "Apply",
+                        negativeButtonText = "Cancel"
+                    )
+                )
+            }
+        )
     }
 }
 

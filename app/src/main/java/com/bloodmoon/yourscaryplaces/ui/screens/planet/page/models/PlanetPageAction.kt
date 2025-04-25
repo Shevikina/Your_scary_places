@@ -4,6 +4,7 @@ sealed class PlanetPageAction {
     data class ShowDialog(
         val title: String,
         val body: String,
-        val buttonText: String
+        val positiveButtonText: String,
+        val negativeButtonText: String
     ) : PlanetPageAction()
 }

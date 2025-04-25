@@ -7,7 +7,8 @@ object Database {
         PlanetInfo(
             label = "Ghost “Yenion”",
             rating = 3,
-            imagePath = "file:///android_asset/App2_Image1.jpg"
+            imagePath = "file:///android_asset/App2_Image1.jpg",
+            description = "We are happy to show you lost places in our endless galaxy. Fear and horror will follow you all the way. Only the most desperate travelers will be able to reach the end. You are ready?"
         ),
         PlanetInfo(
             label = "Destroyed platform",

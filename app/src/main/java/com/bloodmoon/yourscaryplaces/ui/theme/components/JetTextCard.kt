@@ -1,20 +1,22 @@
 package com.bloodmoon.yourscaryplaces.ui.theme.components
 
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
-import com.bloodmoon.yourscaryplaces.R
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Text
+import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.em
 import androidx.compose.ui.unit.sp
+import com.bloodmoon.yourscaryplaces.R
 import com.bloodmoon.yourscaryplaces.ui.theme.JetPlanetsTheme
 import com.bloodmoon.yourscaryplaces.ui.theme.PlanetsTheme
 
@@ -36,15 +38,15 @@ fun JetTextCard(label: String, value: String, modifier: Modifier = Modifier) {
             style = JetPlanetsTheme.typography.bodyMedium.copy(
                 fontSize = 18.sp,
                 fontWeight = FontWeight.Bold,
-                lineHeight = 21.sp
+                lineHeight = 1.em,
+                letterSpacing = 0.em
             ),
             color = JetPlanetsTheme.colorScheme.onSurface
         )
         Text(
             text = value,
             style = JetPlanetsTheme.typography.bodyMedium.copy(
-                fontWeight = FontWeight.Bold,
-                lineHeight = 19.sp
+                fontWeight = FontWeight.Bold
             ),
             color = JetPlanetsTheme.colorScheme.onSurface
         )
@@ -56,6 +58,7 @@ fun JetTextCard(label: String, value: String, modifier: Modifier = Modifier) {
 fun JetTextCardPreview() {
     PlanetsTheme {
         JetTextCard(
+            modifier = Modifier.size(366.dp, 165.dp),
             label = stringResource(R.string.description),
             value = "We are happy to show you lost places in our endless galaxy. Fear and horror will follow you all the way. Only the most desperate travelers will be able to reach the end. You are ready?"
         )

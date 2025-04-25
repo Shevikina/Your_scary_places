@@ -19,20 +19,22 @@ import com.bloodmoon.yourscaryplaces.ui.theme.PlanetsTheme
 
 @Composable
 fun JetGradientButton(text: String, modifier: Modifier = Modifier, onClick: () -> Unit) {
+    val shape = RoundedCornerShape(24.dp)
     Box(
         contentAlignment = Alignment.Center,
         modifier = modifier
-            .clip(RoundedCornerShape(24.dp))
             .background(
-                Brush.linearGradient(
+                brush = Brush.linearGradient(
                     listOf(
                         JetPlanetsTheme.colorScheme.background.copy(0.85f),
                         JetPlanetsTheme.colorScheme.secondary.copy(0.85f)
                     )
-                )
+                ),
+                shape = shape
             )
             .sizeIn(minHeight = 54.dp, minWidth = 366.dp)
-            .clickable { onClick }
+            .clip(shape)
+            .clickable(onClick = onClick)
     ) {
         Text(
             text = text,
