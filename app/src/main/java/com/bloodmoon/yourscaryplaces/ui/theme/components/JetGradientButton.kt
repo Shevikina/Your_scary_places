@@ -14,8 +14,8 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.bloodmoon.yourscaryplaces.ui.theme.JetYourScaryPlacesTheme
-import com.bloodmoon.yourscaryplaces.ui.theme.YourScaryPlacesTheme
+import com.bloodmoon.yourscaryplaces.ui.theme.JetPlanetsTheme
+import com.bloodmoon.yourscaryplaces.ui.theme.PlanetsTheme
 
 @Composable
 fun JetGradientButton(text: String, modifier: Modifier = Modifier, onClick: () -> Unit) {
@@ -26,8 +26,8 @@ fun JetGradientButton(text: String, modifier: Modifier = Modifier, onClick: () -
             .background(
                 Brush.linearGradient(
                     listOf(
-                        JetYourScaryPlacesTheme.colorScheme.background.copy(0.85f),
-                        JetYourScaryPlacesTheme.colorScheme.secondary.copy(0.85f)
+                        JetPlanetsTheme.colorScheme.background.copy(0.85f),
+                        JetPlanetsTheme.colorScheme.secondary.copy(0.85f)
                     )
                 )
             )
@@ -36,9 +36,9 @@ fun JetGradientButton(text: String, modifier: Modifier = Modifier, onClick: () -
     ) {
         Text(
             text = text,
-            style = JetYourScaryPlacesTheme.typography.bodyLarge
+            style = JetPlanetsTheme.typography.bodyLarge
                 .copy(fontWeight = FontWeight.Medium),
-            color = JetYourScaryPlacesTheme.colorScheme.onSurface
+            color = JetPlanetsTheme.colorScheme.onSurface
         )
     }
 }
@@ -46,7 +46,7 @@ fun JetGradientButton(text: String, modifier: Modifier = Modifier, onClick: () -
 @Preview(showBackground = true, backgroundColor = 0xFF1C1F1E)//primary
 @Composable
 fun JetGradientButtonPreview() {
-    YourScaryPlacesTheme {
+    PlanetsTheme {
         JetGradientButton("Send an application") {
             println("BE SEND")
         }

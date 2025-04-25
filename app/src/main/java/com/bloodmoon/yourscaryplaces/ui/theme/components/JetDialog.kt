@@ -27,8 +27,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.em
 import androidx.compose.ui.unit.sp
-import com.bloodmoon.yourscaryplaces.ui.theme.JetYourScaryPlacesTheme
-import com.bloodmoon.yourscaryplaces.ui.theme.YourScaryPlacesTheme
+import com.bloodmoon.yourscaryplaces.ui.theme.JetPlanetsTheme
+import com.bloodmoon.yourscaryplaces.ui.theme.PlanetsTheme
 import com.bloodmoon.yourscaryplaces.utils.advancedShadow
 
 @Composable
@@ -53,30 +53,30 @@ fun JetDialog(
                 cornersRadius = roundedRadius
             )
             .background(
-                color = JetYourScaryPlacesTheme.colorScheme.primary,
-                shape = JetYourScaryPlacesTheme.shapes.dialog
+                color = JetPlanetsTheme.colorScheme.primary,
+                shape = JetPlanetsTheme.shapes.dialog
             )
             .padding(top = 19.dp)
     ) {
         Column(Modifier.width(IntrinsicSize.Max)) {
             Text(
                 text = title,
-                style = JetYourScaryPlacesTheme.typography.bodyLarge.copy(
+                style = JetPlanetsTheme.typography.bodyLarge.copy(
                     fontWeight = FontWeight.Bold,
-                    color = JetYourScaryPlacesTheme.colorScheme.onSurface
+                    color = JetPlanetsTheme.colorScheme.onSurface
                 ),
                 modifier = Modifier.padding(horizontal = 15.dp)
             )
-            Divider(color = JetYourScaryPlacesTheme.colorScheme.onSurface)
+            Divider(color = JetPlanetsTheme.colorScheme.onSurface)
         }
 
         Spacer(modifier = Modifier.height(9.dp))
 
         Text(
             text = body,
-            style = JetYourScaryPlacesTheme.typography.bodyLarge.copy(
+            style = JetPlanetsTheme.typography.bodyLarge.copy(
                 fontSize = 14.sp,
-                color = JetYourScaryPlacesTheme.colorScheme.onSurface,
+                color = JetPlanetsTheme.colorScheme.onSurface,
                 textAlign = TextAlign.Center,
                 letterSpacing = 0.em,
                 lineHeight = 1.em
@@ -91,7 +91,7 @@ fun JetDialog(
             modifier = Modifier
                 .fillMaxWidth()
                 .background(
-                    color = JetYourScaryPlacesTheme.colorScheme.onPrimary,
+                    color = JetPlanetsTheme.colorScheme.onPrimary,
                     shape = RoundedCornerShape(
                         bottomStart = roundedRadius,
                         bottomEnd = roundedRadius
@@ -103,7 +103,7 @@ fun JetDialog(
                 shape = RoundedCornerShape(bottomStart = roundedRadius),
                 colors = ButtonDefaults.textButtonColors(
                     containerColor = Color.Transparent,
-                    contentColor = JetYourScaryPlacesTheme.colorScheme.onSecondary
+                    contentColor = JetPlanetsTheme.colorScheme.onSecondary
                 ),
                 modifier = Modifier
                     .fillMaxWidth(0.5f)
@@ -112,7 +112,7 @@ fun JetDialog(
             ) {
                 Text(
                     positiveButtonText,
-                    style = JetYourScaryPlacesTheme.typography.bodyLarge.copy(fontWeight = FontWeight.Bold)
+                    style = JetPlanetsTheme.typography.bodyLarge.copy(fontWeight = FontWeight.Bold)
                 )
             }
             Button(
@@ -120,7 +120,7 @@ fun JetDialog(
                 shape = RoundedCornerShape(bottomEnd = roundedRadius),
                 colors = ButtonDefaults.textButtonColors(
                     containerColor = Color.Transparent,
-                    contentColor = JetYourScaryPlacesTheme.colorScheme.primary
+                    contentColor = JetPlanetsTheme.colorScheme.primary
                 ),
                 modifier = Modifier
                     .fillMaxWidth()
@@ -128,7 +128,7 @@ fun JetDialog(
             ) {
                 Text(
                     negativeButtonText,
-                    style = JetYourScaryPlacesTheme.typography.bodyLarge.copy(fontWeight = FontWeight.Bold)
+                    style = JetPlanetsTheme.typography.bodyLarge.copy(fontWeight = FontWeight.Bold)
                 )
             }
         }
@@ -138,7 +138,7 @@ fun JetDialog(
 @Preview(showBackground = true)
 @Composable
 private fun JetDialogPreview() {
-    YourScaryPlacesTheme {
+    PlanetsTheme {
         JetDialog(
             title = "Tour details",
             body = "Name: Ghost “Yenion”\nDate: Tommorow",

@@ -17,8 +17,8 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.bloodmoon.yourscaryplaces.ui.theme.JetYourScaryPlacesTheme
-import com.bloodmoon.yourscaryplaces.ui.theme.YourScaryPlacesTheme
+import com.bloodmoon.yourscaryplaces.ui.theme.JetPlanetsTheme
+import com.bloodmoon.yourscaryplaces.ui.theme.PlanetsTheme
 
 @Composable
 fun JetIconButton(
@@ -31,7 +31,7 @@ fun JetIconButton(
     Box(
         contentAlignment = Alignment.Center,
         modifier = modifier
-            .background(JetYourScaryPlacesTheme.colorScheme.surface, shape)
+            .background(JetPlanetsTheme.colorScheme.surface, shape)
             .sizeIn(48.dp, 48.dp)
             .clip(shape)
             .clickable(onClick = onClick)
@@ -39,7 +39,7 @@ fun JetIconButton(
     ) {
         Icon(
             imageVector = ImageVector.vectorResource(id = vectorDrawableId),
-            tint = JetYourScaryPlacesTheme.colorScheme.onSecondary,
+            tint = JetPlanetsTheme.colorScheme.onSecondary,
             contentDescription = "icon"
         )
     }
@@ -48,7 +48,7 @@ fun JetIconButton(
 @Preview
 @Composable
 fun JetIconButtonPreview() {
-    YourScaryPlacesTheme {
+    PlanetsTheme {
         JetIconButton(
             vectorDrawableId = com.microsoft.fluent.mobile.icons.R.drawable.ic_fluent_chevron_left_16_filled,
             shape = RoundedCornerShape(8.dp),

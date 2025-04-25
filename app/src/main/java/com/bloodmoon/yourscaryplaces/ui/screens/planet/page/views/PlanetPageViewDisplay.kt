@@ -20,8 +20,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.bloodmoon.yourscaryplaces.R
 import com.bloodmoon.yourscaryplaces.ui.screens.planets.models.PlanetInfo
-import com.bloodmoon.yourscaryplaces.ui.theme.JetYourScaryPlacesTheme
-import com.bloodmoon.yourscaryplaces.ui.theme.YourScaryPlacesTheme
+import com.bloodmoon.yourscaryplaces.ui.theme.JetPlanetsTheme
+import com.bloodmoon.yourscaryplaces.ui.theme.PlanetsTheme
 import com.bloodmoon.yourscaryplaces.ui.theme.components.JetGradientButton
 import com.bloodmoon.yourscaryplaces.ui.theme.components.JetIconButton
 import com.bloodmoon.yourscaryplaces.ui.theme.components.JetTextCard
@@ -32,22 +32,22 @@ fun PlanetPageViewDisplay(planetInfo: PlanetInfo) {
     Column(
         verticalArrangement = Arrangement.spacedBy(24.dp),
         modifier = Modifier
-            .background(JetYourScaryPlacesTheme.colorScheme.background)
+            .background(JetPlanetsTheme.colorScheme.background)
             .padding(24.dp)
             .fillMaxSize()
             .verticalScroll(rememberScrollState())
     ) {
         JetIconButton(
             vectorDrawableId = com.microsoft.fluent.mobile.icons.R.drawable.ic_fluent_chevron_left_16_filled,
-            shape = JetYourScaryPlacesTheme.shapes.small,
+            shape = JetPlanetsTheme.shapes.small,
             contentPadding = PaddingValues(12.dp)
         ) { println("Back") }
         Spacer(modifier = Modifier.height(14.dp))
 
         Text(
             text = planetInfo.label,
-            color = JetYourScaryPlacesTheme.colorScheme.onPrimary,
-            style = JetYourScaryPlacesTheme.typography.bodyLarge.copy(
+            color = JetPlanetsTheme.colorScheme.onPrimary,
+            style = JetPlanetsTheme.typography.bodyLarge.copy(
                 fontSize = 24.sp,
                 fontWeight = FontWeight.Bold
             )
@@ -65,7 +65,7 @@ fun PlanetPageViewDisplay(planetInfo: PlanetInfo) {
 @Preview
 @Composable
 fun PlanetPageViewDisplayPreview() {
-    YourScaryPlacesTheme {
+    PlanetsTheme {
         PlanetPageViewDisplay(
             PlanetInfo(
                 label = "Ghost “Yenion”",

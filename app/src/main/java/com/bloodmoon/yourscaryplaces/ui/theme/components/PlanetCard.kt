@@ -21,8 +21,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import coil3.compose.AsyncImage
 import com.bloodmoon.yourscaryplaces.ui.screens.planets.models.PlanetInfo
-import com.bloodmoon.yourscaryplaces.ui.theme.JetYourScaryPlacesTheme
-import com.bloodmoon.yourscaryplaces.ui.theme.YourScaryPlacesTheme
+import com.bloodmoon.yourscaryplaces.ui.theme.JetPlanetsTheme
+import com.bloodmoon.yourscaryplaces.ui.theme.PlanetsTheme
 
 @Composable
 fun PlanetCard(
@@ -43,11 +43,11 @@ fun PlanetCard(
             contentScale = ContentScale.Crop,
             modifier = Modifier
                 .height(136.dp)
-                .clip(JetYourScaryPlacesTheme.shapes.large)
+                .clip(JetPlanetsTheme.shapes.large)
                 .border(
                     3.dp,
-                    JetYourScaryPlacesTheme.colorScheme.onSecondary,
-                    JetYourScaryPlacesTheme.shapes.large
+                    JetPlanetsTheme.colorScheme.onSecondary,
+                    JetPlanetsTheme.shapes.large
                 )
                 .background(Color.Gray)
                 .let { if (onClick != null) it.clickable(onClick = onClick) else it }
@@ -58,9 +58,9 @@ fun PlanetCard(
         ) {
             Text(
                 text = info.label,
-                style = JetYourScaryPlacesTheme.typography.bodyLarge
+                style = JetPlanetsTheme.typography.bodyLarge
                     .copy(fontWeight = FontWeight.Medium),
-                color = JetYourScaryPlacesTheme.colorScheme.onSurface,
+                color = JetPlanetsTheme.colorScheme.onSurface,
             )
             Spacer(modifier = Modifier.weight(1f))
             JetRatingBar(
@@ -74,7 +74,7 @@ fun PlanetCard(
 @Preview(showBackground = true, backgroundColor = 0xFF1C1F1E)
 @Composable
 fun PlanetCardPreview() {
-    YourScaryPlacesTheme {
+    PlanetsTheme {
         PlanetCard(
             PlanetInfo(
                 label = "Ghost “Yenion”",

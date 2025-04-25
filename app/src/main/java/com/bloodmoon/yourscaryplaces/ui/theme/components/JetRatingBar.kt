@@ -11,8 +11,8 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.bloodmoon.yourscaryplaces.ui.theme.JetYourScaryPlacesTheme
-import com.bloodmoon.yourscaryplaces.ui.theme.YourScaryPlacesTheme
+import com.bloodmoon.yourscaryplaces.ui.theme.JetPlanetsTheme
+import com.bloodmoon.yourscaryplaces.ui.theme.PlanetsTheme
 
 @Composable
 fun JetStar(color: Color, modifier: Modifier = Modifier) {
@@ -30,15 +30,15 @@ fun JetRatingBar(rating: Int, modifier: Modifier = Modifier) {
         horizontalArrangement = Arrangement.SpaceBetween,
         modifier = modifier
     ) {
-        repeat(rating) { JetStar(JetYourScaryPlacesTheme.colorScheme.onSecondary) }
-        repeat(5 - rating) { JetStar(JetYourScaryPlacesTheme.colorScheme.surface) }
+        repeat(rating) { JetStar(JetPlanetsTheme.colorScheme.onSecondary) }
+        repeat(5 - rating) { JetStar(JetPlanetsTheme.colorScheme.surface) }
     }
 }
 
 @Preview(showBackground = false)
 @Composable
 fun JetRatingBarPreview() {
-    YourScaryPlacesTheme {
+    PlanetsTheme {
         JetRatingBar(
             rating = 3,
             modifier = Modifier

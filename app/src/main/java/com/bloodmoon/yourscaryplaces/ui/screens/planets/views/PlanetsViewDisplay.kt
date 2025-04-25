@@ -23,8 +23,8 @@ import androidx.compose.ui.unit.sp
 import com.bloodmoon.yourscaryplaces.R
 import com.bloodmoon.yourscaryplaces.data.local.Database
 import com.bloodmoon.yourscaryplaces.ui.screens.planets.models.PlanetsEvent
-import com.bloodmoon.yourscaryplaces.ui.theme.JetYourScaryPlacesTheme
-import com.bloodmoon.yourscaryplaces.ui.theme.YourScaryPlacesTheme
+import com.bloodmoon.yourscaryplaces.ui.theme.JetPlanetsTheme
+import com.bloodmoon.yourscaryplaces.ui.theme.PlanetsTheme
 import com.bloodmoon.yourscaryplaces.ui.theme.components.PlanetCard
 
 @Composable
@@ -32,24 +32,24 @@ fun PlanetsViewDisplay(dispatcher: (PlanetsEvent) -> Unit) {
     Box(
         modifier = Modifier
             .fillMaxSize()
-            .background(JetYourScaryPlacesTheme.colorScheme.primary)
+            .background(JetPlanetsTheme.colorScheme.primary)
     )
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.spacedBy(24.dp),
         modifier = Modifier
-            .background(JetYourScaryPlacesTheme.colorScheme.primary)
+            .background(JetPlanetsTheme.colorScheme.primary)
             .padding(24.dp)
             .verticalScroll(rememberScrollState())
     ) {
         Text(
             text = stringResource(id = R.string.header_title).replace(" ", "\n"),
-            style = JetYourScaryPlacesTheme.typography.bodyLarge.copy(
+            style = JetPlanetsTheme.typography.bodyLarge.copy(
                 fontSize = 24.sp,
                 fontWeight = FontWeight.Bold,
                 textAlign = TextAlign.Center
             ),
-            color = JetYourScaryPlacesTheme.colorScheme.onPrimary
+            color = JetPlanetsTheme.colorScheme.onPrimary
         )
         Spacer(modifier = Modifier.height(15.dp))
         Database.planetList.forEachIndexed { idx, info ->
@@ -62,5 +62,5 @@ fun PlanetsViewDisplay(dispatcher: (PlanetsEvent) -> Unit) {
 @Preview
 @Composable
 fun PlanetsViewDisplayPreview() {
-    YourScaryPlacesTheme { PlanetsViewDisplay {} }
+    PlanetsTheme { PlanetsViewDisplay {} }
 }
