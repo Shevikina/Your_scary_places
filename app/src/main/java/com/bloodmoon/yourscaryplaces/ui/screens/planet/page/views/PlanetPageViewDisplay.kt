@@ -19,6 +19,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.bloodmoon.yourscaryplaces.R
+import com.bloodmoon.yourscaryplaces.ui.screens.planet.page.models.PlanetPageEvent
 import com.bloodmoon.yourscaryplaces.ui.screens.planets.models.PlanetInfo
 import com.bloodmoon.yourscaryplaces.ui.theme.JetPlanetsTheme
 import com.bloodmoon.yourscaryplaces.ui.theme.PlanetsTheme
@@ -28,7 +29,7 @@ import com.bloodmoon.yourscaryplaces.ui.theme.components.JetTextCard
 import com.bloodmoon.yourscaryplaces.ui.theme.components.PlanetCard
 
 @Composable
-fun PlanetPageViewDisplay(planetInfo: PlanetInfo) {
+fun PlanetPageViewDisplay(planetInfo: PlanetInfo, dispatcher: (PlanetPageEvent) -> Unit) {
     Column(
         verticalArrangement = Arrangement.spacedBy(24.dp),
         modifier = Modifier
@@ -41,7 +42,7 @@ fun PlanetPageViewDisplay(planetInfo: PlanetInfo) {
             vectorDrawableId = com.microsoft.fluent.mobile.icons.R.drawable.ic_fluent_chevron_left_16_filled,
             shape = JetPlanetsTheme.shapes.small,
             contentPadding = PaddingValues(12.dp)
-        ) { println("Back") }
+        ) { dispatcher.invoke(PlanetPageEvent.CloseScreen) }
         Spacer(modifier = Modifier.height(14.dp))
 
         Text(
@@ -72,6 +73,6 @@ fun PlanetPageViewDisplayPreview() {
                 rating = 3,
                 imagePath = "file:///android_asset/App2_Image1.jpg"
             )
-        )
+        ) {}
     }
 }
