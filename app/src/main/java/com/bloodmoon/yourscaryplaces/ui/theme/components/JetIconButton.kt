@@ -24,8 +24,8 @@ import com.bloodmoon.yourscaryplaces.ui.theme.YourScaryPlacesTheme
 fun JetIconButton(
     vectorDrawableId: Int,
     shape: CornerBasedShape,
-    contentPadding: PaddingValues = PaddingValues(0.dp),
     modifier: Modifier = Modifier,
+    contentPadding: PaddingValues = PaddingValues(0.dp),
     onClick: () -> Unit
 ) {
     Box(
