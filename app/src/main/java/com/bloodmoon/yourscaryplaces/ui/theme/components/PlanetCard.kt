@@ -20,6 +20,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import coil3.compose.AsyncImage
+import com.bloodmoon.yourscaryplaces.data.local.Database
 import com.bloodmoon.yourscaryplaces.ui.screens.planets.models.PlanetInfo
 import com.bloodmoon.yourscaryplaces.ui.theme.JetPlanetsTheme
 import com.bloodmoon.yourscaryplaces.ui.theme.PlanetsTheme
@@ -76,12 +77,7 @@ fun PlanetCard(
 fun PlanetCardPreview() {
     PlanetsTheme {
         PlanetCard(
-            PlanetInfo(
-                id = 0,
-                label = "Ghost “Yenion”",
-                rating = 3,
-                imagePath = "file:///android_asset/App2_Image1.jpg"
-            )
+            info = Database.planetList[0]
         )
     }
 }
