@@ -1,9 +1,0 @@
-package com.bloodmoon.yourscaryplaces.ui.screens.planets.models
-
-data class PlanetInfo(
-    val id: Int,
-    val label: String,
-    val rating: Int,
-    val imagePath: String,
-    val description: String = ""
-)

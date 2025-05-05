@@ -21,7 +21,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.bloodmoon.yourscaryplaces.R
 import com.bloodmoon.yourscaryplaces.ui.screens.planet.page.models.PlanetPageEvent
-import com.bloodmoon.yourscaryplaces.ui.screens.planets.models.PlanetInfo
+import com.bloodmoon.yourscaryplaces.data.local.entity.TourDetails
 import com.bloodmoon.yourscaryplaces.ui.theme.JetPlanetsTheme
 import com.bloodmoon.yourscaryplaces.ui.theme.PlanetsTheme
 import com.bloodmoon.yourscaryplaces.ui.theme.components.JetGradientButton
@@ -30,7 +30,7 @@ import com.bloodmoon.yourscaryplaces.ui.theme.components.JetTextCard
 import com.bloodmoon.yourscaryplaces.ui.theme.components.PlanetCard
 
 @Composable
-fun PlanetPageViewDisplay(planetInfo: PlanetInfo, dispatcher: (PlanetPageEvent) -> Unit) {
+fun PlanetPageViewDisplay(planetInfo: TourDetails, dispatcher: (PlanetPageEvent) -> Unit) {
     Column(
         verticalArrangement = Arrangement.spacedBy(24.dp),
         modifier = Modifier
@@ -47,7 +47,7 @@ fun PlanetPageViewDisplay(planetInfo: PlanetInfo, dispatcher: (PlanetPageEvent) 
         Spacer(modifier = Modifier.height(14.dp))
 
         Text(
-            text = planetInfo.label,
+            text = planetInfo.name,
             color = JetPlanetsTheme.colorScheme.onPrimary,
             style = JetPlanetsTheme.typography.bodyLarge.copy(
                 fontSize = 24.sp,
@@ -67,7 +67,7 @@ fun PlanetPageViewDisplay(planetInfo: PlanetInfo, dispatcher: (PlanetPageEvent) 
                 dispatcher.invoke(
                     PlanetPageEvent.ShowDialog(
                         title = "Tour details",
-                        body = "Name: ${planetInfo.label}\nDate: Tommorow",
+                        body = "Name: ${planetInfo.name}\nDate: Tommorow",
                         positiveButtonText = "Apply",
                         negativeButtonText = "Cancel"
                     )
@@ -82,10 +82,10 @@ fun PlanetPageViewDisplay(planetInfo: PlanetInfo, dispatcher: (PlanetPageEvent) 
 fun PlanetPageViewDisplayPreview() {
     PlanetsTheme {
         PlanetPageViewDisplay(
-            PlanetInfo(
+            TourDetails(
                 id = 0,
-                label = "Ghost “Yenion”",
-                rating = 3,
+                name = "Ghost “Yenion”",
+                stars = 3,
                 imagePath = "file:///android_asset/App2_Image1.jpg"
             )
         ) {}

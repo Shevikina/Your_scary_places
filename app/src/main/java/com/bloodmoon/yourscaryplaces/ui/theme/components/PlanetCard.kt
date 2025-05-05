@@ -21,17 +21,17 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import coil3.compose.AsyncImage
 import com.bloodmoon.yourscaryplaces.data.local.Database
-import com.bloodmoon.yourscaryplaces.ui.screens.planets.models.PlanetInfo
+import com.bloodmoon.yourscaryplaces.data.local.entity.TourDetails
 import com.bloodmoon.yourscaryplaces.ui.theme.JetPlanetsTheme
 import com.bloodmoon.yourscaryplaces.ui.theme.PlanetsTheme
 
 @Composable
 fun PlanetCard(
-    info: PlanetInfo,
+    info: TourDetails,
     modifier: Modifier = Modifier,
     onClick: (() -> Unit)? = null
 ) {
-    if (info.rating > 5 || info.rating < 0 || info.label.isEmpty()) return
+    if (info.stars > 5 || info.stars < 0 || info.name.isEmpty()) return
 
     Column(
         verticalArrangement = Arrangement.SpaceBetween,
@@ -58,14 +58,14 @@ fun PlanetCard(
             modifier = Modifier.padding(16.dp, 10.dp)
         ) {
             Text(
-                text = info.label,
+                text = info.name,
                 style = JetPlanetsTheme.typography.bodyLarge
                     .copy(fontWeight = FontWeight.Medium),
                 color = JetPlanetsTheme.colorScheme.onSurface,
             )
             Spacer(modifier = Modifier.weight(1f))
             JetRatingBar(
-                rating = info.rating,
+                rating = info.stars,
                 modifier = Modifier.height(16.dp)
             )
         }
